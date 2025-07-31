@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -13,10 +14,14 @@ const cartRoutes = require("./cart");
 app.use(authRoutes);
 app.use(cartRoutes);
 
-mongoose.connect(
-  "mongodb+srv://anshulojha1214:fY8vsuBKjs9Z1Bs4@cluster0.e0a7mlr.mongodb.net/ecommerce",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log("MongoDB connected");
+}).catch((err) => {
+  console.error("MongoDB connection error:", err);
+});
 
 const productSchema = new mongoose.Schema({ name: String, price: Number });
 const Product = mongoose.model("Product", productSchema);
@@ -39,4 +44,7 @@ app.get("/product/:id", async (req, res) => {
 
 app.listen(8080, () => {
   console.log("Server running on http://localhost:8080");
+});
+app.get("/", (req, res) => {
+  res.send("Backend is working!");
 });
