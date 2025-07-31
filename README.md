@@ -39,4 +39,4 @@ A simplified e-commerce web application inspired by Flipkart, featuring user aut
 | React Router  | JWT Auth       |              |
 | Context API (optional) | CORS, dotenv |              |
 
----#
+
