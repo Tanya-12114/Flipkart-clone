@@ -7,7 +7,6 @@ A simplified e-commerce web application inspired by Flipkart, featuring user aut
 - **Frontend**: [https://flipkart-clone-git-main-tanya-sharmas-projects-77721015.vercel.app](https://flipkart-clone-git-main-tanya-sharmas-projects-77721015.vercel.app)
 - **Backend API**: [https://flipkart-clone-0qkk.onrender.com](https://flipkart-clone-0qkk.onrender.com)
 
-> Replace these links with your actual deployment URLs.
 
 ---
 
